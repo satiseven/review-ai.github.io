@@ -1,0 +1,30 @@
+@import "tailwindcss";
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --chrome-brand-primary: #1a73e8;
+  --chrome-brand-hover: #1765cc;
+  --chrome-brand-light: #e8f0fe;
+  --chrome-surface: #ffffff;
+  --chrome-background: #f3f4f6;
+  --chrome-border: #dadce0;
+  --chrome-text-primary: #202124;
+  --chrome-text-secondary: #5f6368;
+  --chrome-success-base: #137333;
+  --chrome-success-light: #e6f4ea;
+  --chrome-error-base: #c5221f;
+  --chrome-error-light: #fce8e6;
+}
+
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: "Segoe UI", "Google Sans", "Roboto", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  button {
+    @apply transition-all duration-200;
+  }
+}
