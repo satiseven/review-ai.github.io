@@ -4,7 +4,7 @@ import FeatureCard from "@/components/FeatureCard";
 import Image from "next/image";
 
 export default function Home() {
-  const text = "Add to Chrome — It's Free";
+  const text = "Add to Chrome — It's Free!!!!";
   const description = ` "As a team lead, I appreciate how Review AI helps maintain
                 consistent code quality across our projects. It's like having an
                 extra team member."`;
