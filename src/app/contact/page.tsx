@@ -181,9 +181,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <Button type="submit" variant="primary">
-                  Send Message
-                </Button>
+                <Button variant="primary">Send Message</Button>
               </div>
             </form>
           )}

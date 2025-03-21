@@ -1,29 +1,25 @@
 {
-  "name": "review-ai.github.io",
-  "version": "0.1.0",
-  "private": true,
+  "name": "review-ai-website",
+  "version": "1.0.0",
+  "description": "Website for AI Code Review Chrome Extension",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "export": "next export",
-    "deploy": "npm run build && touch out/.nojekyll"
+    "tailwind:build": "tailwindcss -i ./src/styles/tailwind-input.css -o ./src/styles/tailwind-output.css",
+    "tailwind:watch": "tailwindcss -i ./src/styles/tailwind-input.css -o ./src/styles/tailwind-output.css --watch",
+    "dev": "npm run tailwind:build && next dev",
+    "build": "npm run tailwind:build && next build",
+    "deploy": "npm run build && touch out/.nojekyll && gh-pages -d out --dotfiles",
+    "start": "next start"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.2.3"
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
-    "eslint": "^9",
-    "eslint-config-next": "15.2.3",
-    "@eslint/eslintrc": "^3"
+    "@types/node": "22.13.11",
+    "gh-pages": "^6.0.0",
+    "@types/react": "19.0.12",
+    "tailwindcss": "^3.3.5",
+    "typescript": "5.8.2"
   }
 }

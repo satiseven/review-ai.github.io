@@ -1,61 +1,47 @@
-import React from "react";
+import Link from "next/link";
 
-interface ButtonProps {
+// Define the props type with proper optional fields
+type ButtonProps = {
   children: React.ReactNode;
+  href?: string;
   variant?: "primary" | "secondary" | "outline";
   size?: "sm" | "md" | "lg";
-  href?: string;
-  onClick?: () => void;
   className?: string;
-  type?: "button" | "submit" | "reset";
-  disabled?: boolean;
-}
+  onClick?: () => void;
+};
 
 export default function Button({
   children,
+  href,
   variant = "primary",
   size = "md",
-  href,
-  onClick,
   className = "",
-  type = "button",
-  disabled = false,
+  onClick,
 }: ButtonProps) {
-  const baseClasses =
-    "inline-flex items-center justify-center font-medium rounded-chrome transition-colors";
-
-  const variantClasses = {
-    primary: "text-white bg-chrome-brand-primary hover:bg-chrome-brand-hover",
-    secondary: "text-chrome-text-primary bg-[#f1f3f4] hover:bg-[#e8eaed]",
-    outline:
-      "text-chrome-brand-primary border border-chrome-brand-primary hover:bg-chrome-brand-light",
-  };
-
   const sizeClasses = {
     sm: "px-3 py-1.5 text-sm",
-    md: "px-4 py-2 text-sm",
-    lg: "px-6 py-2.5 text-base",
+    md: "px-4 py-2.5",
+    lg: "px-6 py-3 text-base",
   };
 
-  const disabledClasses = disabled ? "opacity-50 cursor-not-allowed" : "";
+  const variantClasses = {
+    primary: "btn-chrome btn-chrome-primary",
+    secondary: "btn-chrome btn-chrome-secondary",
+    outline: "btn-chrome btn-chrome-outline",
+  };
 
-  const buttonClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${disabledClasses} ${className}`;
+  const classes = `${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
 
-  if (href && !disabled) {
+  if (href) {
     return (
-      <a href={href} className={buttonClasses}>
+      <Link href={href} className={`inline-flex items-center ${classes}`}>
         {children}
-      </a>
+      </Link>
     );
   }
 
   return (
-    <button
-      type={type}
-      onClick={onClick}
-      disabled={disabled}
-      className={buttonClasses}
-    >
+    <button className={`inline-flex items-center ${classes}`} onClick={onClick}>
       {children}
     </button>
   );

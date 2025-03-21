@@ -1,24 +1,28 @@
 import Layout from "@/components/Layout";
 import Button from "@/components/Button";
 import FeatureCard from "@/components/FeatureCard";
-import Image from "next/image";
 
 export default function Home() {
-  const text = "Add to Chrome — It's Free!!!!";
-  const description = ` "As a team lead, I appreciate how Review AI helps maintain
+  const text = "Add to Chrome -- It's Free";
+  const description = `"As a team lead, I appreciate how Review AI helps maintain
                 consistent code quality across our projects. It's like having an
                 extra team member."`;
+
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-12 sm:py-16">
+      <section className="py-12 sm:py-20 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-3xl sm:text-4xl font-medium text-chrome-text-primary mb-4">
-                Intelligent Code Review, Powered by AI
+              <div className="inline-block bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-medium mb-4">
+                Chrome Extension
+              </div>
+              <h1 className="text-3xl sm:text-4xl font-medium text-gray-800 mb-4 leading-tight">
+                Intelligent Code Review,{" "}
+                <span className="text-blue-500">Powered by AI</span>
               </h1>
-              <p className="text-lg text-chrome-text-secondary mb-6">
+              <p className="text-lg text-gray-600 mb-8">
                 Get instant feedback on your code quality, discover bugs, and
                 learn best practices with our AI-powered Chrome extension.
               </p>
@@ -27,6 +31,7 @@ export default function Home() {
                   href="https://chrome.google.com/webstore"
                   variant="primary"
                   size="lg"
+                  className="rounded-full"
                 >
                   <svg
                     className="w-5 h-5 mr-2"
@@ -37,20 +42,26 @@ export default function Home() {
                   </svg>
                   Add to Chrome
                 </Button>
-                <Button href="/features" variant="secondary" size="lg">
+                <Button
+                  href="/features"
+                  variant="secondary"
+                  size="lg"
+                  className="rounded-full"
+                >
                   Learn More
                 </Button>
               </div>
             </div>
             <div className="flex justify-center">
-              <div className="relative shadow-chrome rounded-chrome-lg overflow-hidden border border-chrome-border">
-                <Image
+              <div className="relative shadow-lg rounded-3xl overflow-hidden border-2 border-gray-200 transform hover:rotate-1 transition-transform duration-300">
+                <img
                   src="/images/extension-screenshot.png"
                   alt="Review AI Extension Screenshot"
                   className="w-full max-w-md"
-                  width={600}
-                  height={400}
                 />
+                <div className="absolute -bottom-3 -right-3 bg-yellow-400 text-white p-3 rounded-full shadow-md transform rotate-12">
+                  <span className="font-bold">New!</span>
+                </div>
               </div>
             </div>
           </div>
@@ -58,26 +69,29 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-12">
+      <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-medium text-chrome-text-primary">
-              Key Features
+            <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
+              Awesome Features
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-medium text-gray-800 mt-4 mb-2">
+              What makes Review AI special?
             </h2>
-            <p className="mt-2 text-chrome-text-secondary max-w-2xl mx-auto">
+            <p className="mt-2 text-gray-600 max-w-2xl mx-auto">
               Review AI analyzes your code to provide intelligent suggestions
               and improvements.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <FeatureCard
               title="Best Practices"
               description="Get suggestions based on industry best practices to improve your code quality."
               icon={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
+                  className="h-7 w-7"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -90,7 +104,7 @@ export default function Home() {
                   />
                 </svg>
               }
-              accentColor="#1a73e8"
+              accentColor="#4285f4"
               bgColor="#e8f0fe"
             />
 
@@ -100,7 +114,7 @@ export default function Home() {
               icon={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
+                  className="h-7 w-7"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -113,7 +127,7 @@ export default function Home() {
                   />
                 </svg>
               }
-              accentColor="#137333"
+              accentColor="#34a853"
               bgColor="#e6f4ea"
             />
 
@@ -123,7 +137,7 @@ export default function Home() {
               icon={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
+                  className="h-7 w-7"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -136,13 +150,13 @@ export default function Home() {
                   />
                 </svg>
               }
-              accentColor="#c5221f"
+              accentColor="#ea4335"
               bgColor="#fce8e6"
             />
           </div>
 
-          <div className="text-center mt-10">
-            <Button href="/features" variant="outline">
+          <div className="text-center mt-12">
+            <Button href="/features" variant="outline" className="rounded-full">
               View All Features
             </Button>
           </div>
@@ -150,23 +164,26 @@ export default function Home() {
       </section>
 
       {/* Integration Section */}
-      <section className="py-12 bg-chrome-surface border-y border-chrome-border">
+      <section className="py-16 bg-gradient-to-b from-white to-blue-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-medium text-chrome-text-primary">
+            <span className="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">
+              Seamless Integration
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-medium text-gray-800 mt-4 mb-2">
               Works With Your Favorite Platforms
             </h2>
-            <p className="mt-2 text-chrome-text-secondary max-w-2xl mx-auto">
+            <p className="mt-2 text-gray-600 max-w-2xl mx-auto">
               Review AI integrates seamlessly with popular code repositories and
               platforms.
             </p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-10 items-center">
-            <div className="text-center">
-              <div className="flex items-center justify-center h-16 w-16 mx-auto bg-[#24292e] text-white rounded-full">
+            <div className="text-center transform hover:scale-110 transition-transform duration-200">
+              <div className="flex items-center justify-center h-20 w-20 mx-auto bg-[#24292e] text-white rounded-2xl shadow-md">
                 <svg
-                  className="h-10 w-10"
+                  className="h-12 w-12"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -177,60 +194,57 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <p className="mt-4 font-medium text-chrome-text-primary">
-                GitHub
-              </p>
+              <p className="mt-4 font-medium text-gray-800">GitHub</p>
             </div>
 
-            <div className="text-center">
-              <div className="flex items-center justify-center h-16 w-16 mx-auto bg-[#0052cc] text-white rounded-full">
+            <div className="text-center transform hover:scale-110 transition-transform duration-200">
+              <div className="flex items-center justify-center h-20 w-20 mx-auto bg-[#0052cc] text-white rounded-2xl shadow-md">
                 <svg
-                  className="h-10 w-10"
+                  className="h-12 w-12"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path d="M2.65 0L0 2.65v18.7L2.65 24h18.7L24 21.35V2.65L21.35 0H2.65zM14.4 17.5l-1.05-1.05 3.1-3.1-3.1-3.1 1.05-1.05 4.15 4.15-4.15 4.15zM7.55 17.5L3.4 13.35l4.15-4.15 1.05 1.05-3.1 3.1 3.1 3.1-1.05 1.05z" />
                 </svg>
               </div>
-              <p className="mt-4 font-medium text-chrome-text-primary">
-                Bitbucket
-              </p>
+              <p className="mt-4 font-medium text-gray-800">Bitbucket</p>
             </div>
 
-            <div className="text-center">
-              <div className="flex items-center justify-center h-16 w-16 mx-auto bg-[#fc6d26] text-white rounded-full">
+            <div className="text-center transform hover:scale-110 transition-transform duration-200">
+              <div className="flex items-center justify-center h-20 w-20 mx-auto bg-[#fc6d26] text-white rounded-2xl shadow-md">
                 <svg
-                  className="h-10 w-10"
+                  className="h-12 w-12"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path d="M23.6 11.36L13.12.88a2.16 2.16 0 00-2.8 0L8.49 2.7l3.46 3.46a2.09 2.09 0 012.69 2.7l3.33 3.32a2.09 2.09 0 12.7-2.69L15.76 6.6l6.38 6.37a1.58 1.58 0 010 2.22l-8.38 8.38a1.58 1.58 0 01-2.23 0l-8.38-8.38a1.58 1.58 0 010-2.22l1.9-1.9-1.9-1.9L.55 11.86a2.1 2.1 0 000 3L9.89 24.2a2.16 2.16 0 002.8 0l10.92-10.92a2.1 2.1 0 000-2.93" />
                 </svg>
               </div>
-              <p className="mt-4 font-medium text-chrome-text-primary">
-                GitLab
-              </p>
+              <p className="mt-4 font-medium text-gray-800">GitLab</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-chrome-background">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-medium text-chrome-text-primary">
+            <span className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium">
+              Developer Love
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-medium text-gray-800 mt-4 mb-2">
               What Developers Say
             </h2>
-            <p className="mt-2 text-chrome-text-secondary max-w-2xl mx-auto">
+            <p className="mt-2 text-gray-600 max-w-2xl mx-auto">
               {
-                " Don't just take our word for it—see what other developers think about Review AI."
+                " Don't just take our word for it--see what other developers think about Review AI."
               }
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-chrome-surface p-6 rounded-chrome-lg shadow-chrome-sm">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-200 transform hover:scale-105 transition-transform duration-300">
               <div className="flex items-center mb-4">
                 <svg
                   className="text-yellow-400 h-5 w-5"
@@ -268,22 +282,19 @@ export default function Home() {
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               </div>
-              <p className="text-chrome-text-secondary italic mb-4">
-                <>
+              <div className="bg-blue-50 rounded-xl p-4 mb-4 relative">
+                <div className="absolute -top-2 -left-2 transform rotate-45 w-4 h-4 bg-blue-50"></div>
+                <p className="text-gray-600 italic">
                   Review AI has transformed my code review process. It catches
                   issues I might have missed and has helped me become a better
                   programmer.
-                </>
-              </p>
-              <div className="font-medium text-chrome-text-primary">
-                Sarah L.
+                </p>
               </div>
-              <div className="text-sm text-chrome-text-secondary">
-                Senior Developer
-              </div>
+              <div className="font-medium text-gray-800">Sarah L.</div>
+              <div className="text-sm text-gray-600">Senior Developer</div>
             </div>
 
-            <div className="bg-chrome-surface p-6 rounded-chrome-lg shadow-chrome-sm">
+            <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-200 transform hover:scale-105 transition-transform duration-300">
               <div className="flex items-center mb-4">
                 <svg
                   className="text-yellow-400 h-5 w-5"
@@ -321,20 +332,21 @@ export default function Home() {
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               </div>
-              <p className="text-chrome-text-secondary italic mb-4">
-                The performance optimization suggestions have made a significant
-                difference in our application`s speed. Love how it integrates
-                with GitHub!
-              </p>
-              <div className="font-medium text-chrome-text-primary">
-                Michael R.
+              <div className="bg-green-50 rounded-xl p-4 mb-4 relative">
+                <div className="absolute -top-2 -left-2 transform rotate-45 w-4 h-4 bg-green-50"></div>
+                <p className="text-gray-600 italic">
+                  The performance optimization suggestions have made a
+                  significant difference in our application's speed. Love how it
+                  integrates with GitHub!
+                </p>
               </div>
-              <div className="text-sm text-chrome-text-secondary">
+              <div className="font-medium text-gray-800">Michael R.</div>
+              <div className="text-sm text-gray-600">
                 Lead Developer at TechCorp
               </div>
             </div>
 
-            <div className="bg-chrome-surface p-6 rounded-chrome-lg shadow-chrome-sm">
+            <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-200 transform hover:scale-105 transition-transform duration-300">
               <div className="flex items-center mb-4">
                 <svg
                   className="text-yellow-400 h-5 w-5"
@@ -372,26 +384,26 @@ export default function Home() {
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               </div>
-              <p className="text-chrome-text-secondary italic mb-4">
-                {description}
-              </p>
-              <div className="font-medium text-chrome-text-primary">
-                Alex K.
+              <div className="bg-purple-50 rounded-xl p-4 mb-4 relative">
+                <div className="absolute -top-2 -left-2 transform rotate-45 w-4 h-4 bg-purple-50"></div>
+                <p className="text-gray-600 italic">{description}</p>
               </div>
-              <div className="text-sm text-chrome-text-secondary">
-                Tech Team Lead
-              </div>
+              <div className="font-medium text-gray-800">Alex K.</div>
+              <div className="text-sm text-gray-600">Tech Team Lead</div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-12 bg-chrome-surface border-t border-chrome-border">
+      <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-medium text-chrome-text-primary mb-4">
+          <span className="inline-block animate-bounce bg-yellow-100 text-yellow-600 px-4 py-1.5 rounded-full text-sm font-medium mb-4">
+            Limited Time Offer!
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-medium text-gray-800 mb-4">
             Start Writing Better Code Today
           </h2>
-          <p className="text-chrome-text-secondary mb-8 max-w-2xl mx-auto">
+          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
             Join thousands of developers who use Review AI to improve their
             coding skills and deliver better software.
           </p>
@@ -399,6 +411,7 @@ export default function Home() {
             href="https://chrome.google.com/webstore"
             variant="primary"
             size="lg"
+            className="rounded-full"
           >
             <svg
               className="w-5 h-5 mr-2"
