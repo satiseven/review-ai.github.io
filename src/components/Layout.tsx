@@ -1,10 +1,8 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
-
-const basePath =
-  process.env.NODE_ENV === "production" ? "/review-ai-website" : "";
 
 interface LayoutProps {
   children: ReactNode;
@@ -26,10 +24,12 @@ export default function Layout({ children }: LayoutProps) {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <Link href="/" className="flex items-center">
-                <img
-                  src={`${basePath}/images/icon128.png`}
+                <Image
+                  src="/images/icon128.png"
                   alt="Review AI Logo"
-                  className="h-8 w-8 mr-3"
+                  width={60}
+                  height={60}
+                  className="mr-3"
                 />
                 <div>
                   <h1 className="text-lg font-medium text-chrome-text-primary">

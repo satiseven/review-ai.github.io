@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import Button from "@/components/Button";
 import FeatureCard from "@/components/FeatureCard";
+import Image from "next/image";
 
 export default function Home() {
   const text = "Add to Chrome — It's Free";
@@ -43,10 +44,12 @@ export default function Home() {
             </div>
             <div className="flex justify-center">
               <div className="relative shadow-chrome rounded-chrome-lg overflow-hidden border border-chrome-border">
-                <img
+                <Image
                   src="/images/extension-screenshot.png"
                   alt="Review AI Extension Screenshot"
                   className="w-full max-w-md"
+                  width={600}
+                  height={400}
                 />
               </div>
             </div>
