@@ -484,10 +484,10 @@ const Privacy: NextPage = () => {
                   <p>
                     To exercise any of these rights, please contact us at{" "}
                     <a
-                      href="mailto:privacy@gitreview.com"
+                      href="mailto:satiseven777@gmail.com"
                       className="text-violet-600 hover:text-violet-700 transition-colors"
                     >
-                      privacy@gitreview.com
+                      satiseven777@gmail.com
                     </a>
                     .
                   </p>
@@ -541,14 +541,14 @@ const Privacy: NextPage = () => {
                 <p className="text-gray-800 font-medium mb-1">
                   Email:{" "}
                   <a
-                    href="mailto:privacy@gitreview.com"
+                    href="mailto:satiseven777@gmail.com"
                     className="text-violet-600 hover:text-violet-700 transition-colors"
                   >
-                    privacy@gitreview.com
+                    satiseven777@gmail.com
                   </a>
                 </p>
                 <p className="text-gray-800 font-medium">
-                  Address: 123 Tech Street, San Francisco, CA 94107
+                  Millet cd Molla gurani mah Fatih/Istanbul Turkey
                 </p>
               </div>
               <div className="mt-8">
