@@ -1,177 +1,180 @@
+// components/layout/Header.tsx
+import React, { useState } from "react";
 import Link from "next/link";
-import Button from "./Button";
-import { useState } from "react";
+import { useRouter } from "next/router";
 
-export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+const Header: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
 
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
-          <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="flex items-center">
-              <div className="bg-blue-500 text-white p-2 rounded-lg mr-2 shadow-md transform rotate-3">
-                <svg
-                  className="h-6 w-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M16.214 8.69l6.715-1.679A12.027 12.027 0 0011.907 2C6.277 2 1.523 6.116.386 11.54L7.101 8.69l4.556 4.556 4.557-4.556zm-4.556 4.556L7.1 8.69l-6.715 2.85A12.031 12.031 0 007.1 19.31l4.556-4.557-4.556-4.556zm9.113-4.556l-4.556 4.556 4.556 4.556 6.715-2.85A12.03 12.03 0 0022.143 2l-6.716 2.85zM7.1 19.31L11.907 22l4.807-2.69L11.908 14.754 7.1 19.31z" />
-                </svg>
-              </div>
-              <span className="text-xl font-medium text-gray-800">
-                Review AI
-              </span>
-            </Link>
+    <header className="bg-white shadow-sm">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="flex items-center space-x-2">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500 flex items-center justify-center shadow-sm">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"
+                clipRule="evenodd"
+              />
+              <path
+                fillRule="evenodd"
+                d="M6.5 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-1-5a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1zm1-3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
+                clipRule="evenodd"
+              />
+            </svg>
           </div>
+          <Link href="/" className="no-underline">
+            <div>
+              <h1 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
+                Git Review
+              </h1>
+              <p className="text-xs text-gray-400">AI-Powered Code Review</p>
+            </div>
+          </Link>
+        </div>
 
-          {/* Desktop menu */}
-          <nav className="hidden md:flex space-x-1">
-            <Link
-              href="/"
-              className="text-gray-600 hover:text-blue-500 hover:bg-blue-50 px-3 py-2 rounded-lg font-medium transition-colors"
-            >
-              Home
-            </Link>
-            <Link
-              href="/features"
-              className="text-gray-600 hover:text-blue-500 hover:bg-blue-50 px-3 py-2 rounded-lg font-medium transition-colors"
-            >
-              Features
-            </Link>
-            <Link
-              href="/pricing"
-              className="text-gray-600 hover:text-blue-500 hover:bg-blue-50 px-3 py-2 rounded-lg font-medium transition-colors"
-            >
-              Pricing
-            </Link>
-            <Link
-              href="/docs"
-              className="text-gray-600 hover:text-blue-500 hover:bg-blue-50 px-3 py-2 rounded-lg font-medium transition-colors"
-            >
-              Documentation
-            </Link>
-          </nav>
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-6">
+          <Link
+            href="/#features"
+            className={`text-sm ${router.asPath === "/#features" ? "text-violet-600" : "text-gray-600 hover:text-violet-600"} transition-colors`}
+          >
+            Features
+          </Link>
+          <Link
+            href="/#how-it-works"
+            className={`text-sm ${router.asPath === "/#how-it-works" ? "text-violet-600" : "text-gray-600 hover:text-violet-600"} transition-colors`}
+          >
+            How It Works
+          </Link>
+          <Link
+            href="/#pricing"
+            className={`text-sm ${router.asPath === "/#pricing" ? "text-violet-600" : "text-gray-600 hover:text-violet-600"} transition-colors`}
+          >
+            Pricing
+          </Link>
+          <Link
+            href="/about"
+            className={`text-sm ${router.pathname === "/about" ? "text-violet-600" : "text-gray-600 hover:text-violet-600"} transition-colors`}
+          >
+            About
+          </Link>
+          <Link
+            href="/contact"
+            className={`text-sm ${router.pathname === "/contact" ? "text-violet-600" : "text-gray-600 hover:text-violet-600"} transition-colors`}
+          >
+            Contact
+          </Link>
+        </nav>
 
-          <div className="hidden md:flex items-center">
-            <Button
-              variant="secondary"
-              className="mr-4 rounded-full shadow-sm"
-              href="/login"
-            >
-              Sign In
-            </Button>
-            <Button
-              href="https://chrome.google.com/webstore"
-              className="rounded-full"
-              size="md"
-            >
-              <svg
-                className="w-5 h-5 mr-2"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M16.214 8.69l6.715-1.679A12.027 12.027 0 0011.907 2C6.277 2 1.523 6.116.386 11.54L7.101 8.69l4.556 4.556 4.557-4.556zm-4.556 4.556L7.1 8.69l-6.715 2.85A12.031 12.031 0 007.1 19.31l4.556-4.557-4.556-4.556zm9.113-4.556l-4.556 4.556 4.556 4.556 6.715-2.85A12.03 12.03 0 0022.143 2l-6.716 2.85zM7.1 19.31L11.907 22l4.807-2.69L11.908 14.754 7.1 19.31z" />
-              </svg>
-              Add to Chrome
-            </Button>
-          </div>
+        <div className="hidden md:flex items-center space-x-3">
+          <Link
+            href="#"
+            className="text-sm text-violet-600 hover:text-violet-700 font-medium transition-colors"
+          >
+            Log In
+          </Link>
+          <Link
+            href="#"
+            className="text-sm bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-600 hover:to-fuchsia-600 text-white py-2 px-4 rounded-md shadow-sm transition-colors font-medium"
+          >
+            Get Started
+          </Link>
+        </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              type="button"
-              className="text-gray-600 rounded-lg p-2 hover:bg-gray-100"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        {/* Mobile menu button */}
+        <div className="md:hidden">
+          <button
+            type="button"
+            className="text-gray-500 hover:text-violet-600 focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              {mobileMenuOpen ? (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+              {isMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               ) : (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               )}
-            </button>
-          </div>
+            </svg>
+          </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 py-2">
-          <div className="container mx-auto px-4 space-y-1">
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-white border-t border-gray-100 px-4 py-2">
+          <nav className="flex flex-col space-y-3 py-3">
             <Link
-              href="/"
-              className="block px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-500 font-medium"
-            >
-              Home
-            </Link>
-            <Link
-              href="/features"
-              className="block px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-500 font-medium"
+              href="/#features"
+              className="text-sm text-gray-600 hover:text-violet-600 transition-colors py-1"
             >
               Features
             </Link>
             <Link
-              href="/pricing"
-              className="block px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-500 font-medium"
+              href="/#how-it-works"
+              className="text-sm text-gray-600 hover:text-violet-600 transition-colors py-1"
+            >
+              How It Works
+            </Link>
+            <Link
+              href="/#pricing"
+              className="text-sm text-gray-600 hover:text-violet-600 transition-colors py-1"
             >
               Pricing
             </Link>
             <Link
-              href="/docs"
-              className="block px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-500 font-medium"
+              href="/about"
+              className="text-sm text-gray-600 hover:text-violet-600 transition-colors py-1"
             >
-              Documentation
+              About
             </Link>
-            <div className="pt-4 flex flex-col space-y-2">
-              <Button
-                variant="secondary"
-                href="/login"
-                className="rounded-full"
+            <Link
+              href="/contact"
+              className="text-sm text-gray-600 hover:text-violet-600 transition-colors py-1"
+            >
+              Contact
+            </Link>
+            <div className="pt-2 flex flex-col space-y-2">
+              <Link
+                href="#"
+                className="text-sm text-center text-violet-600 hover:text-violet-700 font-medium transition-colors py-2"
               >
-                Sign In
-              </Button>
-              <Button
-                href="https://chrome.google.com/webstore"
-                className="rounded-full"
+                Log In
+              </Link>
+              <Link
+                href="#"
+                className="text-sm text-center bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-600 hover:to-fuchsia-600 text-white py-2 px-4 rounded-md shadow-sm transition-colors font-medium"
               >
-                <svg
-                  className="w-5 h-5 mr-2"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M16.214 8.69l6.715-1.679A12.027 12.027 0 0011.907 2C6.277 2 1.523 6.116.386 11.54L7.101 8.69l4.556 4.556 4.557-4.556zm-4.556 4.556L7.1 8.69l-6.715 2.85A12.031 12.031 0 007.1 19.31l4.556-4.557-4.556-4.556zm9.113-4.556l-4.556 4.556 4.556 4.556 6.715-2.85A12.03 12.03 0 0022.143 2l-6.716 2.85zM7.1 19.31L11.907 22l4.807-2.69L11.908 14.754 7.1 19.31z" />
-                </svg>
-                Add to Chrome
-              </Button>
+                Get Started
+              </Link>
             </div>
-          </div>
+          </nav>
         </div>
       )}
     </header>
   );
-}
+};
+
+export default Header;

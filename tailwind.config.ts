@@ -1,45 +1,50 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        chrome: {
-          background: "var(--chrome-background)",
-          surface: "var(--chrome-surface)",
-          border: "var(--chrome-border)",
-          text: {
-            primary: "var(--chrome-text-primary)",
-            secondary: "var(--chrome-text-secondary)",
-          },
-          brand: {
-            primary: "var(--chrome-brand-primary)",
-            hover: "var(--chrome-brand-hover)",
-            light: "var(--chrome-brand-light)",
-          },
-          success: {
-            base: "var(--chrome-success-base)",
-            light: "var(--chrome-success-light)",
-          },
-          error: {
-            base: "var(--chrome-error-base)",
-            light: "var(--chrome-error-light)",
-          },
+        violet: {
+          50: "#f5f3ff",
+          100: "#ede9fe",
+          200: "#ddd6fe",
+          300: "#c4b5fd",
+          400: "#a78bfa",
+          500: "#8b5cf6",
+          600: "#7c3aed",
+          700: "#6d28d9",
+          800: "#5b21b6",
+          900: "#4c1d95",
+        },
+        fuchsia: {
+          50: "#fdf4ff",
+          100: "#fae8ff",
+          200: "#f5d0fe",
+          300: "#f0abfc",
+          400: "#e879f9",
+          500: "#d946ef",
+          600: "#c026d3",
+          700: "#a21caf",
+          800: "#86198f",
+          900: "#701a75",
         },
       },
-      boxShadow: {
-        chrome:
-          "0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15)",
-        "chrome-sm": "0 1px 2px 0 rgba(60, 64, 67, 0.2)",
-        "chrome-md": "0 2px 6px 2px rgba(60, 64, 67, 0.15)",
-      },
-      borderRadius: {
-        chrome: "4px",
-        "chrome-lg": "8px",
+      fontFamily: {
+        sans: [
+          "Inter",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif",
+        ],
       },
     },
   },

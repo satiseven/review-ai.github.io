@@ -1,73 +1,18 @@
+/* styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root {
-  /* Cute pastel color scheme */
-  --chrome-background: #ffffff;
-  --chrome-surface: #f8f9fa;
-  --chrome-border: #e6e6e6;
 
-  /* Softer text colors */
-  --chrome-text-primary: #3c4043;
-  --chrome-text-secondary: #5f6368;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
-  /* More vibrant brand colors */
-  --chrome-brand-primary: #4285f4; /* Google blue */
-  --chrome-brand-hover: #1a73e8;
-  --chrome-brand-light: #e8f0fe;
-
-  /* Cute accent colors */
-  --chrome-success-base: #34a853; /* Google green */
-  --chrome-success-light: #e6f4ea;
-  --chrome-error-base: #ea4335; /* Google red */
-  --chrome-error-light: #fce8e6;
-  --chrome-warning: #fbbc04; /* Google yellow */
-  --chrome-warning-light: #fef7e0;
-  --chrome-purple: #a142f4; /* Cute purple */
-  --chrome-purple-light: #f4e9ff;
-}
-@layer components {
-  /* Chrome Web Store inspired button styles */
-  .btn-chrome-webstore {
-    @apply font-medium rounded-full transition-all duration-200;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-  }
-
-  .btn-chrome-webstore:hover {
-    @apply transform -translate-y-0.5;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .btn-chrome-webstore:active {
-    @apply transform translate-y-0;
-  }
-}
-@layer components {
-  .btn-chrome {
-    @apply font-medium transition-all duration-200 flex items-center justify-center;
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .btn-chrome:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-  }
-
-  .btn-chrome:active {
-    transform: translateY(0);
-  }
-
-  .btn-chrome-primary {
-    @apply bg-gradient-to-r from-blue-500 to-blue-600 text-white;
-  }
-
-  .btn-chrome-secondary {
-    @apply bg-white border-2 border-blue-500 text-blue-500 hover:bg-blue-50;
-  }
-
-  .btn-chrome-outline {
-    @apply bg-white border border-gray-300 text-gray-700 hover:bg-gray-50;
-  }
+body {
+  @apply bg-gray-50 text-gray-800;
 }
 
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-r from-violet-500 to-fuchsia-500;
+}

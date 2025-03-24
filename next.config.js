@@ -1,12 +1,8 @@
+// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
-  images: {
-    unoptimized: true,
-  },
-  basePath: process.env.NODE_ENV === "production" ? "/review-ai-website" : "",
-  assetPrefix:
-    process.env.NODE_ENV === "production" ? "/review-ai-website/" : "",
+  reactStrictMode: true,
+  swcMinify: true,
 };
 
 module.exports = nextConfig;

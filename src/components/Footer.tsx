@@ -1,50 +1,50 @@
+// components/layout/Footer.tsx
+import React from "react";
 import Link from "next/link";
 
-export default function Footer() {
+const Footer: React.FC = () => {
   return (
-    <footer className="bg-white border-t border-gray-200 py-12">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between gap-8">
-          <div className="md:w-1/3">
-            <Link href="/" className="flex items-center">
-              <div className="bg-blue-500 text-white p-2 rounded-lg mr-2 shadow-md transform rotate-3">
+    <footer className="bg-white border-t border-gray-100 py-12">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div className="flex items-center space-x-2 mb-4">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500 flex items-center justify-center shadow-sm">
                 <svg
-                  className="h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-white"
+                  viewBox="0 0 20 20"
                   fill="currentColor"
-                  viewBox="0 0 24 24"
                 >
-                  <path d="M16.214 8.69l6.715-1.679A12.027 12.027 0 0011.907 2C6.277 2 1.523 6.116.386 11.54L7.101 8.69l4.556 4.556 4.557-4.556zm-4.556 4.556L7.1 8.69l-6.715 2.85A12.031 12.031 0 007.1 19.31l4.556-4.557-4.556-4.556zm9.113-4.556l-4.556 4.556 4.556 4.556 6.715-2.85A12.03 12.03 0 0022.143 2l-6.716 2.85zM7.1 19.31L11.907 22l4.807-2.69L11.908 14.754 7.1 19.31z" />
+                  <path
+                    fillRule="evenodd"
+                    d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"
+                    clipRule="evenodd"
+                  />
+                  <path
+                    fillRule="evenodd"
+                    d="M6.5 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-1-5a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1zm1-3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
+                    clipRule="evenodd"
+                  />
                 </svg>
               </div>
-              <span className="text-xl font-medium text-gray-800">
-                Review AI
+              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
+                Git Review
               </span>
-            </Link>
-            <p className="mt-4 text-gray-600">
-              AI-powered code reviews that make coding fun and your code better!
-              ✨
+            </div>
+            <p className="text-sm text-gray-500 mb-4">
+              AI-powered code review that helps developers write better code.
             </p>
-            <div className="mt-6 flex space-x-4">
+            <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-gray-400 hover:text-blue-500 transition-colors"
+                className="text-gray-400 hover:text-violet-500 transition-colors"
               >
                 <svg
-                  className="h-6 w-6"
+                  className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
-                >
-                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                </svg>
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-gray-900 transition-colors"
-              >
-                <svg
-                  className="h-6 w-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     fillRule="evenodd"
@@ -53,152 +53,208 @@ export default function Footer() {
                   />
                 </svg>
               </a>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:w-2/3">
-            <div>
-              <h3 className="text-gray-800 font-medium mb-4">Product</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/features"
-                    className="text-gray-600 hover:text-blue-500 hover:underline"
-                  >
-                    Features
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/pricing"
-                    className="text-gray-600 hover:text-blue-500 hover:underline"
-                  >
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/docs"
-                    className="text-gray-600 hover:text-blue-500 hover:underline"
-                  >
-                    Documentation
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/changelog"
-                    className="text-gray-600 hover:text-blue-500 hover:underline"
-                  >
-                    <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full mr-1">
-                      New
-                    </span>
-                    Changelog
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-gray-800 font-medium mb-4">Company</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/about"
-                    className="text-gray-600 hover:text-blue-500 hover:underline"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/blog"
-                    className="text-gray-600 hover:text-blue-500 hover:underline"
-                  >
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/careers"
-                    className="text-gray-600 hover:text-blue-500 hover:underline"
-                  >
-                    Careers
-                    <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full ml-1">
-                      Hiring
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="text-gray-600 hover:text-blue-500 hover:underline"
-                  >
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-gray-800 font-medium mb-4">Legal</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/privacy"
-                    className="text-gray-600 hover:text-blue-500 hover:underline"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/terms"
-                    className="text-gray-600 hover:text-blue-500 hover:underline"
-                  >
-                    Terms of Service
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/cookies"
-                    className="text-gray-600 hover:text-blue-500 hover:underline"
-                  >
-                    Cookie Policy
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Review AI. All rights reserved. Made
-            with ❤️ for developers.
-          </p>
-          <div className="mt-4 md:mt-0">
-            <span className="inline-flex rounded-md shadow-sm">
               <a
                 href="#"
-                className="inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
+                className="text-gray-400 hover:text-violet-500 transition-colors"
               >
                 <svg
-                  className="-ml-1 mr-2 h-5 w-5 text-gray-400"
+                  className="w-5 h-5"
                   fill="currentColor"
-                  viewBox="0 0 20 20"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                </svg>
+              </a>
+              <a
+                href="#"
+                className="text-gray-400 hover:text-violet-500 transition-colors"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     fillRule="evenodd"
-                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
                     clipRule="evenodd"
                   />
                 </svg>
-                Help Center
               </a>
-            </span>
+            </div>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold text-gray-800 mb-4">
+              Product
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/#features"
+                  className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+                >
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#pricing"
+                  className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+                >
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+                >
+                  Integrations
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+                >
+                  API
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+                >
+                  Documentation
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold text-gray-800 mb-4">
+              Company
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/about"
+                  className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+                >
+                  About us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+                >
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+                >
+                  Press
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold text-gray-800 mb-4">
+              Resources
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+                >
+                  Help Center
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+                >
+                  Community
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+                >
+                  Tutorials
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+                >
+                  Webinars
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="pt-8 mt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-sm text-gray-500 mb-4 md:mb-0">
+            &copy; 2025 Git Review. All rights reserved.
+          </p>
+          <div className="flex space-x-6">
+            <Link
+              href="/privacy"
+              className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="#"
+              className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+            >
+              Terms of Service
+            </Link>
+            <Link
+              href="#"
+              className="text-sm text-gray-500 hover:text-violet-500 transition-colors"
+            >
+              Cookie Policy
+            </Link>
           </div>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
